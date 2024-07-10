@@ -29,3 +29,8 @@ Describe lo que realmente sucede en lugar del comportamiento esperado.
 **Código relacionado**
 ```java
 // Inserta el código relevante aquí
+if (edad >= 18) {
+    System.out.println("Eres mayor de edad");
+} else {
+    System.out.println("Eres menor de edad");
+}
