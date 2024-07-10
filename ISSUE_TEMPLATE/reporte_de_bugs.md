@@ -1,14 +1,16 @@
-1. Plantilla para reportes de bugs (`bug_report.md`):
-
-```markdown
+---
+Plantilla para reportes de bugs (`bug_report.md`):
+---
+```yaml
 ---
 name: Reporte de Bug
 about: Crea un reporte para ayudarnos a mejorar
 title: "[BUG] "
 labels: bug
 assignees: ''
-
 ---
+
+# Reporte de Bug
 
 **Describe el bug**
 Una descripción clara y concisa de cuál es el bug.
@@ -29,8 +31,3 @@ Describe lo que realmente sucede en lugar del comportamiento esperado.
 **Código relacionado**
 ```java
 // Inserta el código relevante aquí
-if (edad >= 18) {
-    System.out.println("Eres mayor de edad");
-} else {
-    System.out.println("Eres menor de edad");
-}
