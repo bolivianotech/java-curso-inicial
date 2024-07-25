@@ -4,20 +4,18 @@ public class CuentaBancaria {
     private String numeroCuenta;
     private double saldo;
     private String titular;
+    private String tipoDeMoneda;
 
-    {
-        // Inicializador de instancia
-        Random rand = new Random();
-        this.numeroCuenta = "CTA-" + rand.nextInt(10000);
-    }
-
-    public CuentaBancaria(String titular) {
-        this(titular, 0);
-    }
-
-    public CuentaBancaria(String titular, double saldoInicial) {
+    public CuentaBancaria(String titular, double saldoInicial, String tipoDeMoneda) {
         this.titular = titular;
         this.saldo = saldoInicial;
+        this.tipoDeMoneda = tipoDeMoneda;
+        this.numeroCuenta = generarNumeroCuenta();
+    }
+
+    private String generarNumeroCuenta() {
+        Random rand = new Random();
+        return "CTA-" + rand.nextInt(10000);
     }
 
     public String getNumeroCuenta() {
@@ -32,14 +30,14 @@ public class CuentaBancaria {
         return titular;
     }
 
-    public void setTitular(String titular) {
-        this.titular = titular;
+    public String getTipoDeMoneda() {
+        return tipoDeMoneda;
     }
 
     public void depositar(double monto) {
         if (monto > 0) {
             saldo += monto;
-            System.out.println("Depósito de " + monto + " realizado. Nuevo saldo: " + saldo);
+            System.out.println("Depósito de " + monto + " " + tipoDeMoneda + " realizado. Nuevo saldo: " + saldo + " " + tipoDeMoneda);
         } else {
             System.out.println("El monto a depositar debe ser positivo");
         }
@@ -48,21 +46,15 @@ public class CuentaBancaria {
     public void retirar(double monto) {
         if (monto > 0 && monto <= saldo) {
             saldo -= monto;
-            System.out.println("Retiro de " + monto + " realizado. Nuevo saldo: " + saldo);
+            System.out.println("Retiro de " + monto + " " + tipoDeMoneda + " realizado. Nuevo saldo: " + saldo + " " + tipoDeMoneda);
         } else {
             System.out.println("Fondos insuficientes o monto inválido");
         }
     }
 
-    public static void main(String[] args) {
-        CuentaBancaria cuenta1 = new CuentaBancaria("Juan Pérez", 1000);
-        System.out.println("Cuenta creada: " + cuenta1.getNumeroCuenta());
-        cuenta1.depositar(500);
-        cuenta1.retirar(200);
-
-        CuentaBancaria cuenta2 = new CuentaBancaria("María López");
-        System.out.println("Cuenta creada: " + cuenta2.getNumeroCuenta());
-        cuenta2.depositar(100);
-        cuenta2.retirar(50);
+    public double convertirA(String monedaDestino, double tasaDeCambio) {
+        double saldoConvertido = saldo * tasaDeCambio;
+        System.out.println("Saldo de " + saldo + " " + tipoDeMoneda + " convertido a " + saldoConvertido + " " + monedaDestino);
+        return saldoConvertido;
     }
 }
