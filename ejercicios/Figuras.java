@@ -1,8 +1,8 @@
-abstract class Figura {
+abstract class Figurita {
     public abstract double calcularArea();
 }
 
-class Circulo extends Figura {
+class Circulo extends Figurita {
     private double radio;
 
     public Circulo(double radio) {
@@ -15,7 +15,7 @@ class Circulo extends Figura {
     }
 }
 
-class Rectangulo extends Figura {
+class Rectangulo extends Figurita {
     private double base;
     private double altura;
 
@@ -30,7 +30,7 @@ class Rectangulo extends Figura {
     }
 }
 
-class Triangulo extends Figura {
+class Triangulo extends Figurita {
     private double base;
     private double altura;
 
@@ -47,12 +47,12 @@ class Triangulo extends Figura {
 
 public class Figuras {
     public static void main(String[] args) {
-        Figura[] figuras = new Figura[3];
+        Figurita[] figuras = new Figurita[3];
         figuras[0] = new Circulo(5);
         figuras[1] = new Rectangulo(4, 6);
         figuras[2] = new Triangulo(3, 4);
 
-        for (Figura figura : figuras) {
+        for (Figurita figura : figuras) {
             System.out.println("Área: " + figura.calcularArea());
         }
     }
