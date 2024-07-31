@@ -1,7 +1,7 @@
 public class MainProducto {
     public static void main(String[] args) {
-        Producto p1 = new Producto("Laptop", 1000, 5);
-        Producto p2 = new Producto("Teléfono", 500, 10);
+        Producto p1 = new Producto("Laptop", 1000, 40);
+        Producto p2 = new Producto("Teléfono", 500, 50);
 
         try {
             p1.vender(3);
