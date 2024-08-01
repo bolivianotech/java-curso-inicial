@@ -1,4 +1,4 @@
-public class EmpleadoTiempoCompleto extends Empleado implements Bonificable {
+public class EmpleadoTiempoCompleto extends Empleado implements Bonificable, Evaluable {
     private double salarioMensual;
 
     public EmpleadoTiempoCompleto(String nombre, int id, double salarioMensual) {
@@ -20,4 +20,11 @@ public class EmpleadoTiempoCompleto extends Empleado implements Bonificable {
     public double calcularBono() {
         return salarioMensual * 0.1; // 10% de bono
     }
+
+    @Override
+    public double evaluarDesempeño() {
+        // Implementación simple: siempre se considera buen desempeño
+        return 1.0;
+    }
+
 }

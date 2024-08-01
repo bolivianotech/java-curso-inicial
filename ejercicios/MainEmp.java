@@ -6,6 +6,7 @@ public class MainEmp {
         empleados[0] = new EmpleadoTiempoCompleto("Juan", 1, 3000);
         empleados[1] = new EmpleadoTiempoParcial("María", 2, 15, 80);
         empleados[2] = new EmpleadoTiempoCompleto("Carlos", 3, 3500);
+        
 
         System.out.println("Detalles de empleados:");
         for (Empleado emp : empleados) {

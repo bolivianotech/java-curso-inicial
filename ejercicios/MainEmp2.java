@@ -21,7 +21,10 @@ public class MainEmp2 {
 
         // Ordenar empleados por nombre usando expresión lambda
         Arrays.sort(empleados, (e1, e2) -> e1.nombre.compareTo(e2.nombre));
-
+        /*Esta línea de código es un ejemplo conciso de cómo se puede usar una expresión lambda 
+        para definir un criterio de ordenamiento personalizado en Java. Es particularmente útil 
+        cuando quieres ordenar objetos basándote en un atributo específico sin tener que implementar 
+        la interfaz Comparable en la clase de los objetos o crear una clase Comparator separada. */
         System.out.println("\nEmpleados ordenados por nombre:");
         for (Empleado emp : empleados) {
             System.out.println(emp.nombre);
