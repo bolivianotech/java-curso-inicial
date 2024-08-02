@@ -71,7 +71,7 @@ public class Biblioteca2 {
     }
 
     public void mostrarLibrosPrestados() {
-        System.out.println("Libros prestados:");
+        //System.out.println("Libros prestados:");
         for (Map.Entry<Libro2, String> entry : librosPrestados.entrySet()) {
             System.out.println(entry.getKey().getTitulo() + " - Prestado a: " + entry.getValue());
         }

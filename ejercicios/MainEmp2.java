@@ -14,7 +14,7 @@ public class MainEmp2 {
             emp.mostrarDetalles();
             if (emp instanceof Evaluable) {
                 System.out.println("Desempeño: " + ((Evaluable) emp).evaluarDesempeño());
-                ((Evaluable) emp).aumentarSalario(5);
+                ((Evaluable) emp).aumentarSalario(5); //
             }
             System.out.println();
         }
